@@ -21,6 +21,7 @@ RUN     echo "deb http://deb.debian.org/debian stretch main" >> /etc/apt/sources
 
 RUN     apt-get update && \
         # apt-get -y upgrade && \
+        apt-get -y install apt-utils && \
         apt-get -y install \
             bc \
             bison \

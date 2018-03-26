@@ -8,7 +8,14 @@ ENV USER root
 
 RUN     apt-get update && \
         apt-get -y upgrade && \
-        apt-get -y install sudo && \
+        apt-get -y install \
+            git \
+            libelf-dev \
+            libncurses5 \
+            libncurses5-dev \
+            linux-headers-$(uname -r) \
+            kernel-package \
+            sudo && \
         rm -rf /var/lib/apt/lists/*
 
 RUN     useradd -ms /bin/bash user && \

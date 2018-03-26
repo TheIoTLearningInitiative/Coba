@@ -22,7 +22,7 @@ RUN     apt-get update && \
             # linux-headers-$(uname -r) \
             #fakeroot \
             # kernel-package \
-            sudo \ &&
+            sudo &&
             #xz-utils && \
         rm -rf /var/lib/apt/lists/*
 

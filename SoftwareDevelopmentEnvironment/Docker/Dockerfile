@@ -6,17 +6,6 @@ ENV TIMEZONE America/Mexico_City
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
 
-
-RUN     cat << EOM >> /etc/apt/sources.list \
-            deb http://ftp.us.debian.org/debian/ stretch main contrib non-free \
-            deb-src http://ftp.us.debian.org/debian/ stretch main contrib non-free \
-            deb http://deb.debian.org/debian stretch main \
-            deb-src http://deb.debian.org/debian stretch main \
-        EOM
-
-RUN     echo "deb http://ftp.us.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
-RUN     echo "deb-src http://ftp.us.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
-
 RUN     echo "deb http://deb.debian.org/debian stretch main" >> /etc/apt/sources.list
 RUN     echo "deb-src http://deb.debian.org/debian stretch main" >> /etc/apt/sources.list
 RUN     echo "deb http://deb.debian.org/debian stretch-updates main" >> /etc/apt/sources.list
@@ -43,11 +32,7 @@ RUN     apt-get update && \
             libncurses5 \
             libncurses5-dev \
             libssl-dev \
-            # linux-headers-$(uname -r) \
-            #fakeroot \
-            # kernel-package \
             sudo && \
-            #xz-utils && \
         rm -rf /var/lib/apt/lists/*
 
 RUN     useradd -ms /bin/bash user && \

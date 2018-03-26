@@ -6,6 +6,14 @@ ENV TIMEZONE America/Mexico_City
 ENV DEBIAN_FRONTEND noninteractive
 ENV USER root
 
+
+RUN     cat << EOM >> /etc/apt/sources.list \
+            deb http://ftp.us.debian.org/debian/ stretch main contrib non-free \
+            deb-src http://ftp.us.debian.org/debian/ stretch main contrib non-free \
+            deb http://deb.debian.org/debian stretch main \
+            deb-src http://deb.debian.org/debian stretch main \
+        EOM
+
 RUN     echo "deb http://ftp.us.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
 RUN     echo "deb-src http://ftp.us.debian.org/debian/ stretch main contrib non-free" >> /etc/apt/sources.list
 
@@ -26,8 +34,10 @@ RUN     echo "deb-src http://security.debian.org/debian-security/ stretch/update
 RUN     apt-get update && \
         apt-get -y upgrade && \
         apt-get -y install \
-            # bc \
+            bc \
+            bison \
             build-essential \
+            flex \
             git \
             libelf-dev \
             libncurses5 \

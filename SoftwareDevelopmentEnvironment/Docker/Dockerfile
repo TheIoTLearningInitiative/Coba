@@ -42,6 +42,9 @@ RUN     useradd -ms /bin/bash user && \
 USER user
 WORKDIR /home/user
 
-RUN     git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+RUN     git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git && \
+        cd /home/user/linux && \
+        make defconfig && \
+        make
 
 CMD ["/bin/bash"]

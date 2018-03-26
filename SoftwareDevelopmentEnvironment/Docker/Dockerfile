@@ -21,17 +21,17 @@ RUN     echo "deb http://security.debian.org/debian-security/ stretch/updates ma
 RUN     echo "deb-src http://security.debian.org/debian-security/ stretch/updates main contrib non-free" >> /etc/apt/sources.list
 
 RUN     apt-get update && \
-        apt-get -y upgrade && \
+        # apt-get -y upgrade && \
         apt-get -y install \
             bc \
             bison \
             build-essential \
             flex \
             git \
-            libelf-dev \
-            libncurses5 \
-            libncurses5-dev \
-            libssl-dev \
+            # libelf-dev \
+            # libncurses5 \
+            # libncurses5-dev \
+            # libssl-dev \
             sudo && \
         rm -rf /var/lib/apt/lists/*
 

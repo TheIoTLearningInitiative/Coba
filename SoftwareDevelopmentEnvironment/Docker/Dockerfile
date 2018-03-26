@@ -9,7 +9,7 @@ ENV USER root
 RUN     apt-get update && \
         apt-get -y upgrade && \
         apt-get -y install \
-            bc \
+            # bc \
             build-essential \
             git \
             libelf-dev \
@@ -17,10 +17,10 @@ RUN     apt-get update && \
             libncurses5-dev \
             libssl-dev \
             # linux-headers-$(uname -r) \
-            fakeroot \
+            #fakeroot \
             # kernel-package \
             sudo \
-            xz-utils && \
+            #xz-utils && \
         rm -rf /var/lib/apt/lists/*
 
 RUN     useradd -ms /bin/bash user && \

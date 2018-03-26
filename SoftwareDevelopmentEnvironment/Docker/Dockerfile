@@ -12,12 +12,12 @@ RUN     echo "deb http://deb.debian.org/debian stretch main" >> /etc/apt/sources
         echo "deb-src http://deb.debian.org/debian stretch-updates main" >> /etc/apt/sources.list && \
         echo "deb http://security.debian.org/debian-security/ stretch/updates main" >> /etc/apt/sources.list && \
         echo "deb-src http://security.debian.org/debian-security/ stretch/updates main" >> /etc/apt/sources.list && \
-        echo "deb http://deb.debian.org/debian stretch main contrib non-free" >> /etc/apt/sources.list && \
-        echo "deb-src http://deb.debian.org/debian stretch main contrib non-free" >> /etc/apt/sources.list && \
-        echo "deb http://deb.debian.org/debian stretch-updates main contrib non-free" >> /etc/apt/sources.list && \
-        echo "deb-src http://deb.debian.org/debian stretch-updates main contrib non-free" >> /etc/apt/sources.list && \
-        echo "deb http://security.debian.org/debian-security/ stretch/updates main contrib non-free" >> /etc/apt/sources.list && \
-        echo "deb-src http://security.debian.org/debian-security/ stretch/updates main contrib non-free" >> /etc/apt/sources.list
+        echo "deb http://deb.debian.org/debian stretch contrib non-free" >> /etc/apt/sources.list && \
+        echo "deb-src http://deb.debian.org/debian stretch contrib non-free" >> /etc/apt/sources.list && \
+        echo "deb http://deb.debian.org/debian stretch-updates contrib non-free" >> /etc/apt/sources.list && \
+        echo "deb-src http://deb.debian.org/debian stretch-updates contrib non-free" >> /etc/apt/sources.list && \
+        echo "deb http://security.debian.org/debian-security/ stretch/updates contrib non-free" >> /etc/apt/sources.list && \
+        echo "deb-src http://security.debian.org/debian-security/ stretch/updates contrib non-free" >> /etc/apt/sources.list
 
 RUN     apt-get update && \
         # apt-get -y upgrade && \

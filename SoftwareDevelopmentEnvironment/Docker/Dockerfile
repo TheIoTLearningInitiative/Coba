@@ -14,8 +14,8 @@ RUN     apt-get update && \
             libelf-dev \
             libncurses5 \
             libncurses5-dev \
-            #linux-headers-$(uname -r) \
-            kernel-package \
+            # linux-headers-$(uname -r) \
+            # kernel-package \
             sudo && \
         rm -rf /var/lib/apt/lists/*
 

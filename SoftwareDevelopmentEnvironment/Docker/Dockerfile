@@ -26,4 +26,6 @@ RUN     useradd -ms /bin/bash user && \
 USER user
 WORKDIR /home/user
 
+RUN     git clone git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+
 CMD ["/bin/bash"]
